@@ -1,5 +1,5 @@
-from generation import gen
-from perceptron_fun import perceptron
+from src.generation import gen
+from src.perceptron_fun import perceptron
 import matplotlib.pyplot as plt
 
 
