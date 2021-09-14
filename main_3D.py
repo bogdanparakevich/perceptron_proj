@@ -33,6 +33,10 @@ ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Reds')
 
 ax.scatter3D(xdata, ydata, y_true, c=y_true, cmap='Greens')
 
+ax.set_xlabel('x1')
+ax.set_ylabel('x2')
+ax.set_zlabel('y')
+
 surf = ax.plot_surface(X, Y, Z, cmap='Blues')
 
 plt.show()
