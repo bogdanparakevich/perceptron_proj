@@ -1,4 +1,2 @@
-Run main.py and see the magic.
-    Ha ha, it's just the mathematics.
-            Python is the best language in the World!
-                Data Science rules.
+Run main.py for 2D model
+Run main_2.py for 3D model
