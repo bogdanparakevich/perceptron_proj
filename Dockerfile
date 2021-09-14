@@ -5,4 +5,4 @@ RUN pip install numpy
 
 COPY . .
 
-RUN ["python3", "main.py", "main_2.py"]
+RUN ["python3", "main_2D.py", "main_3D.py"]

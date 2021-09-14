@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def perceptron_2(x1: tuple, x2: tuple, y_true: tuple, epochs = 30000) -> tuple:
+def perceptron_3D(x1: tuple, x2: tuple, y_true: tuple, epochs = 30000) -> tuple:
     '''
     function find weights by method gradient descent and nesterov momentum
     return tuple: [w0, w1]

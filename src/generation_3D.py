@@ -1,6 +1,6 @@
 import numpy as np
 
-def gen_2(n_dots: int, x_min: float, x_max: float, w0_model: float, w1_model: float, w2_model: float, M = -0.5, std = 1) -> tuple:
+def gen_3D(n_dots: int, x_min: float, x_max: float, w0_model: float, w1_model: float, w2_model: float, M = -0.5, std = 1) -> tuple:
     '''
     @n_dots: number of points
     @x_min: min limit of x
