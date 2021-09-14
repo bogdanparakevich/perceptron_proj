@@ -1,7 +1,16 @@
 import numpy as np
 
-def gen_2D(n_dots: int, x_min: float, x_max: float, w0_model: float, w1_model: float, M = -0.5, std = 1) -> tuple:
-    '''
+
+def gen_2D(
+    n_dots: int,
+    x_min: float,
+    x_max: float,
+    w0_model: float,
+    w1_model: float,
+    M=0,
+    std=1,
+) -> tuple:
+    """
     @n_dots: number of points
     @x_min: min limit of x
     @x_max: max limit of x
@@ -12,8 +21,8 @@ def gen_2D(n_dots: int, x_min: float, x_max: float, w0_model: float, w1_model: f
     function generate x and y data
     return tuples x, y
     return w0_start, w1_start for plotting
-    '''
-    e = np.random.normal(M, std, (n_dots, ))
+    """
+    e = np.random.normal(M, std, (n_dots,))
     x0 = np.ones(n_dots)
     x = np.linspace(x_min, x_max, n_dots)
     xx = np.array([x0, x])
@@ -24,4 +33,3 @@ def gen_2D(n_dots: int, x_min: float, x_max: float, w0_model: float, w1_model: f
     step3 = step2.dot(xx.T)
     b = step3.dot(y)
     return x, y, w0_model, w1_model, b
-

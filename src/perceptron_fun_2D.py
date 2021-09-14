@@ -1,11 +1,11 @@
 import numpy as np
 
 
-def perceptron_2D(x: tuple, y_true: tuple, epochs = 50000) -> tuple:
-    '''
+def perceptron_2D(x: tuple, y_true: tuple, epochs=50000) -> tuple:
+    """
     function find weights by method gradient descent and nesterov momentum
     return tuple: [w0, w1]
-    '''
+    """
 
     n = y_true.shape[0]
     # count n for loss function
@@ -22,7 +22,6 @@ def perceptron_2D(x: tuple, y_true: tuple, epochs = 50000) -> tuple:
     change_1 = 0.001
     # nesterov momentum
 
-
     def model(x, w0, w1):
         y_pred = w0 + w1 * x
         return y_pred
@@ -36,17 +35,10 @@ def perceptron_2D(x: tuple, y_true: tuple, epochs = 50000) -> tuple:
         # nesterov momentum
         w0_new = w0 + change_new_w0
         w1_new = w1 + change_new_w1
-        #if (abs(w0_new - w0) < delta) and (abs(w1_new - w1) < delta):
+        # if (abs(w0_new - w0) < delta) and (abs(w1_new - w1) < delta):
         #    break
         w0 = w0_new
         w1 = w1_new
         change_0 = change_new_w0
         change_1 = change_new_w1
-    return [w0 , w1]
-
-
-
-
-
-
-
+    return [w0, w1]

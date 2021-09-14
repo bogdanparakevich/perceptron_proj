@@ -1,7 +1,17 @@
 import numpy as np
 
-def gen_3D(n_dots: int, x_min: float, x_max: float, w0_model: float, w1_model: float, w2_model: float, M = -0.5, std = 1) -> tuple:
-    '''
+
+def gen_3D(
+    n_dots: int,
+    x_min: float,
+    x_max: float,
+    w0_model: float,
+    w1_model: float,
+    w2_model: float,
+    M=0,
+    std=1,
+) -> tuple:
+    """
     @n_dots: number of points
     @x_min: min limit of x
     @x_max: max limit of x
@@ -13,16 +23,16 @@ def gen_3D(n_dots: int, x_min: float, x_max: float, w0_model: float, w1_model: f
     function generate x and y data
     return tuples x, y
     return w0_start, w1_start for plotting
-    '''
-    e1 = np.random.normal(0, 1, (n_dots, ))
-    e2 = np.random.normal(1, 1, (n_dots, ))
-    e = np.random.normal(-1, 1, (n_dots, ))
+    """
+    e1 = np.random.normal(0, 1, (n_dots,))
+    e2 = np.random.normal(0, 1, (n_dots,))
+    e = np.random.normal(0, 1, (n_dots,))
     x0 = np.ones(int(n_dots))
-    x1 = np.random.randint(x_min, x_max, (n_dots, ))
-    x2 = np.random.randint(x_min, x_max, (n_dots, ))
+    x1 = np.random.randint(x_min, x_max, (n_dots,)) + e1
+    x2 = np.random.randint(x_min, x_max, (n_dots,)) + e2
     xx = np.array([x0, x1, x2])
     xx = xx.T
-    y_model = w0_model + (w1_model * (x1 + e1)) + (w2_model * (x2 + e2)) + e
+    y_model = w0_model + w1_model * x1 + w2_model * x2 + e
     step1 = xx.T.dot(xx)
     step2 = np.linalg.inv(step1)
     step3 = step2.dot(xx.T)
