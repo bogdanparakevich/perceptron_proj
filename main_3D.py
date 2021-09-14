@@ -6,7 +6,7 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 x1, x2, y_model, w0_model, w1_model, w2_model, b = gen_3D(
-    n_dots=100, x_min=1, x_max=10, w0_model=0.2, w1_model=1, w2_model=2, M=0, std=1
+    n_dots=100, x_min=1, x_max=10, w0_model=0.2, w1_model=1, w2_model=2
 )
 
 print("w0_model, w1_model, w2_model =", w0_model, w1_model, w2_model)

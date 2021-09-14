@@ -6,9 +6,7 @@ def gen_2D(
     x_min: float,
     x_max: float,
     w0_model: float,
-    w1_model: float,
-    M=0,
-    std=1,
+    w1_model: float
 ) -> tuple:
     """
     @n_dots: number of points
@@ -16,13 +14,13 @@ def gen_2D(
     @x_max: max limit of x
     @w0_model: w0 start weight
     @w1_model: w1 start weight
-    @M = -0.5: mean (“centre”) of the distribution
+    @M = 0: mean (“centre”) of the distribution
     @std = 1: Standard deviation (spread or “width”) of the distribution. Must be non-negative.
     function generate x and y data
     return tuples x, y
     return w0_start, w1_start for plotting
     """
-    e = np.random.normal(M, std, (n_dots,))
+    e = np.random.normal(0, 1, (n_dots,))
     x0 = np.ones(n_dots)
     x = np.linspace(x_min, x_max, n_dots)
     xx = np.array([x0, x])

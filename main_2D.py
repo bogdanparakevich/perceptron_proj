@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # y_true = w0_model + w1_model * x + e
 x, y_true, w0_model, w1_model, b = gen_2D(
-    n_dots=1000, x_min=0, x_max=1, w0_model=0.2, w1_model=1, M=0, std=1
+    n_dots=400, x_min=0, x_max=1, w0_model=0.2, w1_model=1
 )
 
 print("w0_model, w1_model =", w0_model, w1_model)

@@ -7,9 +7,7 @@ def gen_3D(
     x_max: float,
     w0_model: float,
     w1_model: float,
-    w2_model: float,
-    M=0,
-    std=1,
+    w2_model: float
 ) -> tuple:
     """
     @n_dots: number of points
@@ -18,7 +16,7 @@ def gen_3D(
     @w0_model: w0 start weight
     @w1_model: w1 start weight
     @w2_model: w2 start weight
-    @M = -0.5: mean (“centre”) of the distribution
+    @M = 0: mean (“centre”) of the distribution
     @std = 1: Standard deviation (spread or “width”) of the distribution. Must be non-negative.
     function generate x and y data
     return tuples x, y
